@@ -8,7 +8,7 @@ namespace Dictionary.Core.Models
         // multiple English definitions, but only one Japanese reading. Parts of
         // speech is basic categorization of the word, whether it's a noun, verb,
         // or an expression. 
-        public Entry(string slug, bool isCommon, JLPTenum jLPTLevel, string japaneseWord, string japaneseReading, string[] englishDefinitions, string[] partsOfSpeech)
+        public Entry(string slug, bool isCommon, Enums.Enums jLPTLevel, string japaneseWord, string japaneseReading, string[] englishDefinitions, string[] partsOfSpeech)
         {
             Slug = slug;
             IsCommon = isCommon;
@@ -21,7 +21,7 @@ namespace Dictionary.Core.Models
 
         public string Slug { get; set; }
         public bool IsCommon { get; set; }
-        public JLPTenum JLPTLevel { get; set; }
+        public JLPTLevel JLPTLevel { get; set; }
         public string JapaneseWord { get; set; }
         public string JapaneseReading { get; set; }
         public string[] EnglishDefinitions { get; set; }
