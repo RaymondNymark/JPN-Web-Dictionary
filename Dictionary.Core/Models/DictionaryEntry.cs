@@ -2,13 +2,13 @@
 
 namespace Dictionary.Core.Models
 {
-    public class Entry
+    public class DictionaryEntry
     {
         // Model for a single dictionary entry.  A dictionary entry can hold
         // multiple English definitions, but only one Japanese reading. Parts of
         // speech is basic categorization of the word, whether it's a noun, verb,
         // or an expression. 
-        public Entry(string slug, bool isCommon, Enums.Enums jLPTLevel, string japaneseWord, string japaneseReading, string[] englishDefinitions, string[] partsOfSpeech)
+        public DictionaryEntry(string slug, bool isCommon, JLPTLevel jLPTLevel, string japaneseWord, string japaneseReading, string[] englishDefinitions, string[] partsOfSpeech)
         {
             Slug = slug;
             IsCommon = isCommon;
