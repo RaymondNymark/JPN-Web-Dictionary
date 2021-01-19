@@ -1,6 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Dictionary.Core.Models
 {
@@ -11,48 +10,63 @@ namespace Dictionary.Core.Models
         // information.
         public class DictionaryEntry
         {
+            [JsonProperty("data")]
             public List<Datum> Entries { get; set; }
         }
 
         public class Datum
         {
             // slug is global unique identifier.
-            public string slug { get; set; }
+            [JsonProperty("slug")]
+            public string UniqueIdentifier { get; set; }
 
             // is_common bool if a word is common.
-            public bool is_common { get; set; }
+            [JsonProperty("is_common")]
+            public bool IsCommon { get; set; }
 
             // array of tags like: Noun, I-Adjective, Verb, Suru-verb
             // appropriate for specific word.
-            public string[] tags { get; set; }
+            [JsonProperty("tags")]
+            public List<string> Tags { get; set; }
 
             // associated JLPT-level of the word if there's one.
-            public string[] jlpt { get; set; }
+            [JsonProperty("jlpt")]
+            public List<string> JLPTLevel { get; set; }
 
             // Array of 'Japanese' as each dictionary entry can have multiple
             // readings or alternative used words.
-            public Japanese[] japanese { get; set; }
+            [JsonProperty("japanese")]
+            public List<Japanese> JapaneseData { get; set; }
 
             // Array of sens that contain English definitions, tags, and various
             // meta data surrounding word.
-            public Sens[] senses { get; set; }
+            [JsonProperty("senses")]
+            public List<Sens> EnglishData { get; set; }
 
         }
 
         public class Japanese
         {
-            public string word { get; set; }
-            public string reading { get; set; }
+            [JsonProperty("word")]
+            public string Word { get; set; }
+            [JsonProperty("reading")]
+            public string Reading { get; set; }
         }
 
         public class Sens
         {
-            public string[] english_definitions { get; set; }
-            public string[] parts_of_speech { get; set; }
-            public string[] tags { get; set; }
-            public string[] restrictions { get; set; }
-            public string[] see_also { get; set; }
-            public string[] antonyms { get; set; }
+            [JsonProperty("english_definitions")]
+            public List<string> EnglishDefinitions { get; set; }
+            [JsonProperty("parts_of_speech")]
+            public List<string> PartsOfSpeech { get; set; }
+            [JsonProperty("tags")]
+            public List<string> Tags { get; set; }
+            [JsonProperty("restrictions")]
+            public List<string> Restrictions { get; set; }
+            [JsonProperty("see_also")]
+            public List<string> ExtraData { get; set; }
+            [JsonProperty("antonyms")]
+            public List<string> Antonyms { get; set; }
         }
     }
 }
