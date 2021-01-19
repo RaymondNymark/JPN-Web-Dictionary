@@ -11,7 +11,7 @@ namespace Dictionary.Core.Models
         // information.
         public class DictionaryEntry
         {
-            public Datum[] Entries { get; set; }
+            public List<Datum> Entries { get; set; }
         }
 
         public class Datum
