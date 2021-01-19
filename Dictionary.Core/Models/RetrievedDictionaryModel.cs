@@ -8,13 +8,13 @@ namespace Dictionary.Core.Models
         // Nested classes to encapsulate the structure.  Each successful API
         // call is to return an array of Datums containing all of the useful
         // information.
-        public class DictionaryEntry
+        public class DictionaryResult
         {
             [JsonProperty("data")]
-            public List<Datum> Entries { get; set; }
+            public List<Entry> Entries { get; set; }
         }
 
-        public class Datum
+        public class Entry
         {
             // slug is global unique identifier.
             [JsonProperty("slug")]
