@@ -1,4 +1,5 @@
 using Dictionary.Blazor.Data;
+using Dictionary.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +29,7 @@ namespace Dictionary.Blazor
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.AddSingleton<WeatherForecastService>();
+            services.AddSingleton<IDictionarySearchService, DictionarySearchService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
