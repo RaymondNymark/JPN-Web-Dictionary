@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using Dictionary.Core.Services;
+using System.Linq;
 
 namespace Dictionary.Tests.Services
 {
@@ -8,15 +9,21 @@ namespace Dictionary.Tests.Services
     public class DictionarySearchService_Tests
     {
         [TestMethod]
-        public void SearchDictionaryAsync_ValidCallShouldReturnValidData()
+        public void SearchDictionaryAsync_ValidCallShouldReturnSomething()
         {
-            Assert.AreEqual(true, false);
-        }
+            var input = "omoiyari";
+            var actual = false;
+            var service = new DictionarySearchService();
 
-        [TestMethod]
-        public void ShouldPass()
-        {
-            Assert.AreEqual(true, true);
+            var retrievedList = service.SearchDictionaryAsync(input).Result;
+
+            if (retrievedList.Count > 1)
+            {
+                // Returns true if anything is actually retrieved.
+                actual = true;
+            }
+
+            Assert.IsTrue(actual);
         }
     }
 }
