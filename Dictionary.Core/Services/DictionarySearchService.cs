@@ -1,14 +1,12 @@
 ﻿using Dictionary.Core.Models;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Dictionary.Core.Services
 {
-    public class DictionarySearchService
+    public class DictionarySearchService : IDictionarySearchService
     {
         public DictionarySearchService()
         {
@@ -21,7 +19,7 @@ namespace Dictionary.Core.Services
         /// of found entries, if they are found.
         /// </summary>
         /// <param name="searchTerm"></param>
-        /// <returns></returns>
+        /// <returns>A list of retrieved dictionary searches</returns>
         public async Task<List<RetrievedDictionaryModel.Entry>> SearchDictionaryAsync(string searchTerm)
         {
             string SearchTerm = searchTerm;
