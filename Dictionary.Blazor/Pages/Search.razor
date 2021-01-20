@@ -1,0 +1,63 @@
+﻿@page "/"
+@page "/Search"
+
+@using Dictionary.Core.Services
+@using Dictionary.Core.Models
+
+@inject IDictionarySearchService _dictionarySearchService
+
+<h3>Japanese Search</h3>
+
+@if(dictionaryEntries == null)
+{
+
+}
+else
+{
+    <table class="table">
+        <tbody>
+            @foreach (var entry in dictionaryEntries)
+            {
+            <tr>
+                <td>@(entry.JapaneseData.First().Word + $" [{entry.JapaneseData.First().Reading}]")</td>
+                @foreach (var englishData in entry.EnglishData)
+                {
+                    string connectedDefinitionString = "";
+                    string tags = "";
+
+                    foreach(var definition in englishData.EnglishDefinitions)
+                    {
+                        connectedDefinitionString += $"{definition}; ";
+                    }
+
+                    foreach(var tag in englishData.PartsOfSpeech)
+                    {
+                        tags += $"{tag}, ";
+                    }
+
+                    <td>@(connectedDefinitionString + "(" + tags + ")")</td>
+                }
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<RetrievedDictionaryModel.Entry> dictionaryEntries;
+
+    protected override async Task OnInitializedAsync()
+    {
+        dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
+    }
+
+    //private string ConnectEnglishDefinitions(RetrievedDictionaryModel.Entry input)
+    //{
+    //    string connectedString = "";
+
+    //    foreach (var definition in input.EnglishData)
+    //    {
+    //        connectedString = connectedString + $"{definition.Eng}";
+    //    }
+    //}
+}

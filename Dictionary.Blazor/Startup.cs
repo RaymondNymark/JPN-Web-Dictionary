@@ -1,4 +1,3 @@
-using Dictionary.Blazor.Data;
 using Dictionary.Core.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
