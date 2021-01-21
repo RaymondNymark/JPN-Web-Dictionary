@@ -20,50 +20,58 @@
 else
 {
     <div id="result_count">
-        <h6>
+        <h5>
             Results
             <span class="result_count"> ー @_entryCount found</span>
-        </h6>
+        </h5>
     </div>
+    <br />
 
-    <table class="table">
-        <tbody>
-            @foreach (var entry in dictionaryEntries)
-            {
-                <tr>
-                    <td>@(entry.JapaneseData.First().Word + $" [{entry.JapaneseData.First().Reading}]")</td>
-                    @foreach (var englishData in entry.EnglishData)
-                    {
-                        string connectedDefinitionString = "";
-                        string tags = "";
+    @foreach (var entry in dictionaryEntries)
+    {
+        <div class="single_dictionary_entry">
+            <div class="japanese_info">
+                <div class="japanese_word_entry">
+                    <span class="japanese_hiragana">@entry.JapaneseData.First().Reading</span>
+                    <span class="japanese_fullword">@entry.JapaneseData.First().Word</span>
+                </div>
+                <div class="japanese_tags">
+                    <span class="jap_tags">(tags)</span>
+                </div>
+            </div>
+            <div class="english_info">
+                @foreach (var englishEntry in entry.EnglishData)
+                {
+                <div class="word_meaning">
+                    <span class="meaning-tags">@String.Join(", ", englishEntry.PartsOfSpeech)</span>
+                    <span class="meaning_definition">@($"{_localEnglishCount}. ") @String.Join("; ", englishEntry.EnglishDefinitions)</span>
+                    <br />
+                    <br />
+                </div>
+                    _localEnglishCount++;
+                }
+            </div>
+            <br />
+            <br />
+        </div>
 
-                        foreach (var definition in englishData.EnglishDefinitions)
-                        {
-                            connectedDefinitionString += $"{definition}; ";
-                        }
+        _localEnglishCount = 1;
+    }
 
-                        foreach (var tag in englishData.PartsOfSpeech)
-                        {
-                            tags += $"{tag}, ";
-                        }
 
-                        <td>@(connectedDefinitionString + "(" + tags + ")")</td>
-                    }
-                </tr>
-            }
-        </tbody>
-    </table>
+    <br />
 }
 
 @code {
     private List<RetrievedDictionaryModel.Entry> dictionaryEntries;
     private string _searchTerm = string.Empty;
     private string _entryCount = string.Empty;
+    private int _localEnglishCount = 1;
 
-    protected override async Task OnInitializedAsync()
-    {
-        //dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
-    }
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    //dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
+    //}
 
     /// <summary>
     /// Searches the dictionary and updates dictionary entries using the _searchTerm property as the input.
