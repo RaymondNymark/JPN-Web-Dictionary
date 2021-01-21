@@ -17,6 +17,11 @@ html, body {
     border: 1px solid #d6d5d5;
 }
 
+.brsmall{
+    display: block;
+    margin-bottom: -.2em;
+}
+
 .result_count {
     font-weight: normal;
     font-size: 12px;
@@ -35,14 +40,13 @@ html, body {
 }
 
 .japanese_info {
-    display: block;
+    display: inline-block;
     font-size: 20px;
     padding: 0;
     width: 15%;
     float: left;
     text-align: left;
     margin-bottom: 25px;
-    margin-left:20px;
 }
 
 .japanese_fullword{
@@ -62,12 +66,12 @@ html, body {
 }
 
 .english_info {
-    display: block;
+    display: inline-block;
     width: 85%;
     font-size: 16px;
     line-height: 1.5;
-    margin-bottom: 10px;
-    margin-left: 20px;
+    /*margin-bottom: 10px;*/
+    /*margin-right: 20px;*/
     padding: 0;
 }
 

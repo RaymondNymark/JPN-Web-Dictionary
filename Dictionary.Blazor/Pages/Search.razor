@@ -26,7 +26,6 @@ else
         </h5>
     </div>
     <br />
-
     @foreach (var entry in dictionaryEntries)
     {
         <div class="single_dictionary_entry">
@@ -54,11 +53,8 @@ else
             <br />
             <br />
         </div>
-
         _localEnglishCount = 1;
     }
-
-
     <br />
 }
 
@@ -68,10 +64,10 @@ else
     private string _entryCount = string.Empty;
     private int _localEnglishCount = 1;
 
-    //protected override async Task OnInitializedAsync()
-    //{
-    //    //dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
-    //}
+    protected override async Task OnInitializedAsync()
+    {
+        //dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
+    }
 
     /// <summary>
     /// Searches the dictionary and updates dictionary entries using the _searchTerm property as the input.
