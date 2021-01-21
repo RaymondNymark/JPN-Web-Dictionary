@@ -6,11 +6,18 @@
 
 @inject IDictionarySearchService _dictionarySearchService
 
-<h3>Japanese Search</h3>
+<h3>Japanese Search!</h3>
+
+    <div id="main_search" class="main">
+        <input type="text" placeholder="Love, happiness.." @bind-value="@_searchTerm" />
+        <input type="button" value="Search" @onclick="@SearchDictionaryAsync"/>
+    </div>
+    <br/>
+    <br/>
 
 @if(dictionaryEntries == null)
 {
-
+    
 }
 else
 {
@@ -45,19 +52,17 @@ else
 
 @code {
     private List<RetrievedDictionaryModel.Entry> dictionaryEntries;
+    private string _searchTerm = string.Empty;
 
     protected override async Task OnInitializedAsync()
     {
-        dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
+        //dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
     }
 
-    //private string ConnectEnglishDefinitions(RetrievedDictionaryModel.Entry input)
-    //{
-    //    string connectedString = "";
-
-    //    foreach (var definition in input.EnglishData)
-    //    {
-    //        connectedString = connectedString + $"{definition.Eng}";
-    //    }
-    //}
+    /// <summary>
+    /// Searches the dictionary and updates dictionary entries using the _searchTerm property as the input.
+    /// </summary>
+    private async Task SearchDictionaryAsync() {
+        dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync(_searchTerm);
+    }
 }
