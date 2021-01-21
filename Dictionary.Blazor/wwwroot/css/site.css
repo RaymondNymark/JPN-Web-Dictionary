@@ -17,6 +17,16 @@ html, body {
     border: 1px solid #d6d5d5;
 }
 
+.result_count {
+    font-weight: normal;
+    font-size: 12px;
+    color: #AEAEB2;
+}
+
+#result_count {
+    margin: 0px 0px 0px 10px;
+}
+
 a, .btn-link {
     color: #0366d6;
 }
