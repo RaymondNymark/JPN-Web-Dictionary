@@ -8,10 +8,10 @@
 @inject IJSRuntime _jsRunTime
 @inject IDictionarySearchService _dictionarySearchService
 
-<h3>Japanese Search!</h3>
+<h3 id="main_header">Japanese Search!</h3><br />
 <div id="main_search" class="main">
-    <input type="text" placeholder="Love, happiness.." @bind-value="@_searchTerm" />
-    <input type="button" value="Search" @onclick="@SearchDictionaryManuallyAsync" />
+    <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" />
+    <input type="button" id="txt_button" value="Search" @onclick="@SearchDictionaryManuallyAsync"/>
 </div>
 <br />
 @if (dictionaryEntries == null)
