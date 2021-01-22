@@ -112,13 +112,31 @@ html, body {
     padding: 0;
 }
 
-.meaning-tags {
-    display: block;
-    font-size: 12px;
+.skinny_information_text {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: inherit;
+    text-align: center;
+    font-size: 16px;
+    max-width: 50%;
+    color: #AEAEB2;
+}
+
+#themedurl:link {
+    color: #48484A;
+}
+
+#themedurl:visited {
+    color: #48484A;
+}
+
+.meaning_tags{
+    display:block;
+    font-size:12px;
     color: gray;
 }
 
-.meaning_definition{
+.meaning_definition {
     font-size: 19px;
 }
 

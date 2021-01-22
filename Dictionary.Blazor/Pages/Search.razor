@@ -16,7 +16,12 @@
 <br />
 @if (dictionaryEntries == null)
 {
-
+    <div class="skinny_information_text">
+        <br />
+        <p>A simple Japanese-English dictionary using the Jisho.api to find Japanese words, readings, kanji, and so on. </p>
+        <p>Enter any Japanese or English words or text in the search box, like 'love' or 'summer' and the results will be presented.</p>
+        <p>This blazor.application is created by me, <a id="themedurl" href="https://github.com/RaymondNymark"><u>Raymond Nymark</u></a> 😊</p>
+    </div>
 }
 else
 {
@@ -43,7 +48,7 @@ else
                 @foreach (var englishEntry in entry.EnglishData)
                 {
                 <div class="word_meaning">
-                    <span class="meaning-tags">@String.Join(", ", englishEntry.PartsOfSpeech)</span>
+                    <span class="meaning_tags">@String.Join(", ", englishEntry.PartsOfSpeech)</span>
                     <span class="meaning_definition">@($"{_localEnglishCount}. ") @String.Join("; ", englishEntry.EnglishDefinitions)</span>
                     <br />
                     <br />
