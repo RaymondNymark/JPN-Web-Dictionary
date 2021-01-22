@@ -1,5 +1,6 @@
 ﻿@page "/"
 @page "/Search"
+@page "/Search/{SearchTerm}" 
 
 @using Dictionary.Core.Services
 @using Dictionary.Core.Models
@@ -59,6 +60,10 @@ else
 }
 
 @code {
+    // Search term from the URL so links to searches can be saved. 
+    [Parameter]
+    public string SearchTerm { get; set; }
+
     private List<RetrievedDictionaryModel.Entry> dictionaryEntries;
     private string _searchTerm = string.Empty;
     private string _entryCount = string.Empty;
@@ -66,7 +71,12 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        //dictionaryEntries = await _dictionarySearchService.SearchDictionaryAsync("愛");
+        if (!string.IsNullOrEmpty(SearchTerm))
+        {
+            // If there's a provided URL parameter it intializes searching dictionary with the URL parameter.
+            _searchTerm = SearchTerm;
+            await SearchDictionaryAsync();
+        }
     }
 
     /// <summary>
