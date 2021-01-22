@@ -37,8 +37,17 @@ else
         <div class="single_dictionary_entry">
             <div class="japanese_info">
                 <div class="japanese_word_entry">
-                    <span class="japanese_hiragana">@entry.JapaneseData.First().Reading</span>
-                    <span class="japanese_fullword">@entry.JapaneseData.First().Word</span>
+                    @if (string.IsNullOrEmpty(entry.JapaneseData.First().Word))
+                    {
+                        // If there is no kanji in the word, only display the kana as the word.
+                        <span class="japanese_hiragana">&nbsp;</span>
+                        <span class="japanese_fullword">@entry.JapaneseData.First().Reading</span>
+                    }
+                    else
+                    {
+                        <span class="japanese_hiragana">@entry.JapaneseData.First().Reading</span>
+                        <span class="japanese_fullword">@entry.JapaneseData.First().Word</span>
+                    }
                 </div>
                 <div class="japanese_tags">
                     <span class="jap_tags">(tags)</span>
