@@ -5,13 +5,13 @@
 @using Dictionary.Core.Services
 @using Dictionary.Core.Models
 
+@inject IJSRuntime _jsRunTime
 @inject IDictionarySearchService _dictionarySearchService
 
 <h3>Japanese Search!</h3>
-
 <div id="main_search" class="main">
     <input type="text" placeholder="Love, happiness.." @bind-value="@_searchTerm" />
-    <input type="button" value="Search" @onclick="@SearchDictionaryAsync" />
+    <input type="button" value="Search" @onclick="@SearchDictionaryManuallyAsync" />
 </div>
 <br />
 @if (dictionaryEntries == null)
@@ -84,9 +84,28 @@ else
     /// </summary>
     private async Task SearchDictionaryAsync()
     {
+        // Retrieves dictionary search results and updates the entryCount to display total amount of results;
         var retrievedEntries = await _dictionarySearchService.SearchDictionaryAsync(_searchTerm);
         _entryCount = retrievedEntries.Count.ToString();
 
         dictionaryEntries = retrievedEntries;
+    }
+
+    // Alternate method so the automatic URL based method doesn't cause an
+    // exception when the page is updated using the URL instead of search box.
+    private async Task SearchDictionaryManuallyAsync()
+    {
+        await SearchDictionaryAsync();
+
+        // Changes the URL to reflect search term so it can be saved.
+        await ChangePageUrlToSearchTerm();
+    }
+
+    // Invokes JS script to change the page URL. It's purely visual and does
+    // nothing to back end of the application.
+    private async Task ChangePageUrlToSearchTerm()
+    {
+        var newUrl = $"Search/{_searchTerm}";
+        await _jsRunTime.InvokeAsync<string>("ChangeUrl", newUrl);
     }
 }
