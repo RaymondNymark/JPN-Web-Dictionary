@@ -50,7 +50,14 @@ else
                     }
                 </div>
                 <div class="japanese_tags">
-                    <span class="jap_tags">(tags)</span>
+                    @if (entry.IsCommon)
+                    {
+                    <span id="is_common_tag">&nbsp;&nbsp;&nbsp;common word&nbsp;&nbsp;&nbsp;</span>
+                    }
+                    @if (entry.JLPTLevel.Count > 0) 
+                    {
+                    <span id="jlpt_tag">&nbsp;&nbsp;@String.Join(", ", entry.JLPTLevel)&nbsp;&nbsp;</span>
+                    }
                 </div>
             </div>
             <div class="english_info">
