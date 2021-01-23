@@ -137,7 +137,17 @@ html, body {
 }
 
 .meaning_definition {
-    font-size: 19px;
+    display: inline-block;
+    color: #000000;
+    font-size: 20px;
+}
+
+.meaning_extratags {
+    display: inline-block;
+    color: #7B97B5;
+    font-size: 14px;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 a, .btn-link {

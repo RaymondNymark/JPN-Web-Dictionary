@@ -59,6 +59,7 @@ else
                 <div class="word_meaning">
                     <span class="meaning_tags">@String.Join(", ", englishEntry.PartsOfSpeech)</span>
                     <span class="meaning_definition">@($"{_localEnglishCount}. ") @String.Join("; ", englishEntry.EnglishDefinitions)</span>
+                    <span class="meaning_extratags">@String.Join(", ", englishEntry.Tags)</span>
                     <br />
                     <br />
                 </div>
