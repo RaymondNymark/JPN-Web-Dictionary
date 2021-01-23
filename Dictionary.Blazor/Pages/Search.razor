@@ -10,7 +10,7 @@
 
 <h3 id="main_header">Japanese Search!</h3><br />
 <div id="main_search" class="main">
-    <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" />
+    <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync"/>
     <input type="button" id="txt_button" value="Search" @onclick="@SearchDictionaryManuallyAsync"/>
 </div>
 <br />
@@ -121,5 +121,18 @@ else
     {
         var newUrl = $"Search/{_searchTerm}";
         await _jsRunTime.InvokeAsync<string>("ChangeUrl", newUrl);
+    }
+
+    // Handles keys being pressed in the search box.
+    public async Task KeyPressAsync(KeyboardEventArgs e)
+    {
+        // Fires off a basic JS script to simulate the clicking the txt_button.
+        // Although a click could be simulated directly here, JS method is a lot
+        // cleaner.
+
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+            await _jsRunTime.InvokeVoidAsync("ClickButtonByElementID", "txt_button");
+        }
     }
 }
