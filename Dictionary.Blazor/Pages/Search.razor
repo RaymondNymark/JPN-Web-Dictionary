@@ -8,9 +8,9 @@
 @inject IJSRuntime _jsRunTime
 @inject IDictionarySearchService _dictionarySearchService
 
-<h3 id="main_header">Japanese Search!</h3><br />
+<h3 id="main_header">Japanese Web Dictionary!</h3><br />
 <div id="main_search" class="main">
-    <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync"/>
+    <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false"/>
     <input type="button" id="txt_button" value="Search" @onclick="@SearchDictionaryManuallyAsync"/>
 </div>
 <br />
@@ -18,9 +18,10 @@
 {
     <div class="skinny_information_text">
         <br />
-        <p>A simple Japanese-English dictionary using the Jisho.api to find Japanese words, readings, kanji, and so on. </p>
-        <p>Enter any Japanese or English words or text in the search box, like 'love' or 'summer' and the results will be presented.</p>
-        <p>This blazor.application is created by me, <a id="themedurl" href="https://github.com/RaymondNymark"><u>Raymond Nymark</u></a> 😊</p>
+        <p>A tidy Japanese-English dictionary, using the Jisho.api to find Japanese words, readings, expressions, and so much more.</p>
+        <p>Enter any Japanese or English words, phrases, or text (like ‘love’ or ‘summer’) and the results will be presented.</p>
+        <p>This ASP.NET Blazor application is created by me, <br /><a id="themedurl" href="https://github.com/RaymondNymark"><u>Raymond Nymark</u></a> 😊</p>
+
     </div>
 }
 else
