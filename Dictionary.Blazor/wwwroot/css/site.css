@@ -12,6 +12,7 @@ html, body {
 
 #main_header{
     text-align: center;
+    font-weight: bold;
 }
 
 #main_search {
@@ -52,6 +53,10 @@ html, body {
 }
 .search_button {
     border-left: 10px;
+}
+
+#smaller_paragraph{
+    font-size: 1em;
 }
 
 .brsmall {
