@@ -14,25 +14,42 @@ Also does minor things like saving the search query as a URL so you can save lin
 
 &nbsp;
 
-## The dictionary in action!**
-**Gif to show what it's like to actually use the dictionary**
+## The dictionary in action!
+**What it's like to actually use the dictionary...**
 
 ![](raw-assets/readme/Web-Dictionary.gif)
 
 &nbsp;
 
+
+&nbsp;
+
+
+&nbsp;
+
+---
+
 ## Handful of screenshots:
+
+&nbsp;
 
 **The main landing page:**
 ![](raw-assets/readme/screenshot1.png)
 
 &nbsp;
+---
 
-**Support for both Japanese and English search queries**
+## Support for both Japanese and English search queries
 ![](raw-assets/readme/screenshot2.png)
+
+&nbsp;
+---
 
 ![](raw-assets/readme/Screenshot3.png)
 
 &nbsp;
+---
 
-Thank you for checking this out! 🙂
+&nbsp;
+
+Thank you for checking this out! I'm an avid fan of Japanese and a dictionary seemed like a fun project to make. This page will be updated once the web-app is deployed publicly, to include a link to it. Have a nice day 😊👍
