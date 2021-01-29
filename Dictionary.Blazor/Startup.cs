@@ -45,6 +45,8 @@ namespace Dictionary.Blazor
                 app.UseHsts();
             }
 
+            app.UseForwardedHeaders(new ForwardedHeadersOptions { ForwardedHeaders = Microsoft.AspNetCore.HttpOverrides.ForwardedHeaders.All });
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
