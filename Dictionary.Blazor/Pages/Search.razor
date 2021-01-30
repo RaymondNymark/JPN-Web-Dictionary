@@ -9,9 +9,11 @@
 @inject IDictionarySearchService _dictionarySearchService
 
 <h3 id="main_header">Japanese Web Dictionary!</h3><br />
-<div id="main_search" class="main">
-    <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false"/>
-    <input type="button" id="txt_button" value="Search" @onclick="@SearchDictionaryManuallyAsync"/>
+<div id="main_search">
+    <div class="inside_Search">
+        <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false"/>
+        <input type="button" id="txt_button" @onclick="@SearchDictionaryManuallyAsync" />
+    </div>
 </div>
 <br />
 @if (dictionaryEntries == null)
