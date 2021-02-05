@@ -110,7 +110,7 @@ else
     private async Task SearchDictionaryAsync()
     {
         // Retrieves dictionary search results and updates the entryCount to display total amount of results;
-        var retrievedEntries = await _dictionarySearchService.SearchDictionaryAsync(_searchTerm);
+        var retrievedEntries = await _dictionarySearchService.SearchDictionaryAsync(_searchTerm.ToLower());
         _entryCount = retrievedEntries.Count.ToString();
 
         dictionaryEntries = retrievedEntries;
