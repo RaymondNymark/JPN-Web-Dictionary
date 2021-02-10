@@ -10,7 +10,7 @@ namespace Dictionary.Core.Services
     {
         public DictionarySearchService()
         {
-            // Initializes the API Client.  TODO : Move this to autostart.
+            // Initializes the API Client.
             ApiManager.InitializeAPIClient();
         }
 
