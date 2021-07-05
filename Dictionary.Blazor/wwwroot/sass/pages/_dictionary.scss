@@ -1,0 +1,163 @@
+// _disctionary.scss
+#dictionary-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 32px;
+    min-height: 700px;
+}
+
+#result-display{
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000;
+    //padding: 2px 0px;
+}
+
+.result{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    padding: 8px 0px;
+}
+
+// No border at bottom for last element.
+.result:nth-last-child(1){
+    border-bottom: 0px solid #000;
+}
+.complete-word{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 0.1;
+}
+
+.japanese-word{
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    .kanji{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 42px;
+        line-height: 100%;
+    }
+    .hiragana{
+        font-family: Open Sans;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 100%;
+    }
+}
+
+.extra-tags{
+    display: flex;
+    flex-direction: column;
+    span{
+        font-family: Verdana;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        color: #FFFFFF;
+        border-radius: 4px;
+        margin: 2px 0px;
+    }
+
+    .jlpt-tag{
+        //background-color: #000000;
+        width: 70px;
+    }
+    .common-word{
+        background-color: #C32D30;
+        width: 100px;
+    }
+}
+
+.word-definitions{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 0px;
+    flex-grow: 1;
+}
+
+
+.definition{
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0px;
+
+    span{
+        color: #000000;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .extra-definition{
+        color: #C32D30;
+        opacity: 0.5;
+        font-size: 18px;
+        line-height: 26px;
+}
+
+    div:nth-child(1){
+        span:nth-child(1){
+            color: #000;
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 30px;
+            padding-right: 8px;
+        }
+        span:nth-child(2){
+            color: #C32D30;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 23px;
+        }
+    }
+
+    div:nth-child(2){
+        padding-left: 64px;
+    }
+}
+
+// JLPT-tag colors.
+.jlpt-1{background-color: #DD571C;}
+.jlpt-2{background-color: #e2730b;}
+.jlpt-3{background-color: #e28c0b;}
+.jlpt-4{background-color: #e29e0b;}
+.jlpt-5{background-color: #FFBF00;}
+
+@media (max-width: 500px){
+    .result{ flex-direction: column; }
+    .complete-word{ flex-direction: row; justify-content: space-between; width: 100%;}
+    .extra-tags{ padding: 20px 0px 0px 0px; align-items: flex-end;}
+    #dictionary-wrapper{ padding: 8px 12px; }
+    .definition div:nth-child(2){ padding-left: 28px;}
+    #result-display{ font-size: 18px;}
+}
+
+// Extra wide screen optimization.
+@media (min-width: 1250px){
+    //#dictionary-wrapper{ padding: 8px 128px; }
+    .definition{flex-direction: row;}
+
+    .definition div:nth-child(2){
+        padding-left: 32px;
+    }
+}

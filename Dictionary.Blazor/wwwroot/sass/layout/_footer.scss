@@ -1,0 +1,12 @@
+// _footer.scss
+// This contains all styles related to the footer of this website.
+
+$theme-color: #1E1E1E;
+
+#footer-wrapper{
+    background-color: $theme-color;
+    //position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+}
