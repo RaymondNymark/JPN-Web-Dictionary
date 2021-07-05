@@ -8,81 +8,80 @@
 @inject IJSRuntime _jsRunTime
 @inject IDictionarySearchService _dictionarySearchService
 
-<h3 id="main_header">Japanese Web Dictionary!</h3><br />
-<div id="main_search">
-    <div class="inside_Search">
-        <input type="text" id="txt_input" placeholder="Love, happiness.." @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false" maxlength="100"/>
-        <input type="button" id="txt_button" @onclick="@SearchDictionaryManuallyAsync" />
-    </div>
-</div>
-<br />
+<header id="header-wrapper">
+        <content id="header-main">
+            <content id="header-text">
+                <span>日本語 - Eng</span>
+                <span>辞書 dictionary</span>
+            </content>
+            <div id="header-search">
+                <input type="text" placeholder="Love, happiness"  @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false" maxlength="100">
+                <img src="css/icons/cancel.svg">
+                <img src="css/icons/search.svg" @onclick="@SearchDictionaryManuallyAsync">
+            </div>
+        </content>
+</header>
+
+<div id="dictionary-wrapper">
 @if (dictionaryEntries == null)
 {
-    <div class="skinny_information_text">
+    @* <div class="skinny_information_text">
         <br />
         <p>A tidy Japanese-English dictionary, using the Jisho.api to find Japanese words, readings, expressions, and so much more.</p>
         <p>Enter any Japanese or English words, phrases, or text (like ‘love’ or ‘summer’) and the results will be presented.</p>
         <p id="smaller_paragraph">This ASP.NET Blazor application is created by me, <br /><a id="themedurl" href="https://github.com/RaymondNymark"><u>Raymond Nymark</u></a> 😊</p>
-
-    </div>
+    </div> *@
 }
 else
 {
-    <div id="result_count">
-        <h5>
-            Results
-            <span class="result_count"> ー @_entryCount found</span>
-        </h5>
-    </div>
-    <br />
+    <span id="result-display">Definition of '@_searchTerm' - @_entryCount Results</span>
+
     @foreach (var entry in dictionaryEntries)
     {
-        <div class="single_dictionary_entry">
-            <div class="japanese_info">
-                <div class="japanese_word_entry">
+        <div class="result">
+            <div class="complete-word">
+                <div class="japanese-word">
                     @if (string.IsNullOrEmpty(entry.JapaneseData.First().Word))
                     {
                         // If there is no kanji in the word, only display the kana as the word.
-                        <span class="japanese_hiragana">&nbsp;</span>
-                        <span class="japanese_fullword">@entry.JapaneseData.First().Reading</span>
+                        <span class="hiragana">&nbsp;</span>
+                        <span class="kanji">@entry.JapaneseData.First().Reading</span>
                     }
                     else
                     {
-                        <span class="japanese_hiragana">@entry.JapaneseData.First().Reading</span>
-                        <span class="japanese_fullword">@entry.JapaneseData.First().Word</span>
+                        <span class="hiragana">@entry.JapaneseData.First().Reading</span>
+                        <span class="kanji">@entry.JapaneseData.First().Word</span>
                     }
                 </div>
-                <div class="japanese_tags">
-                    @if (entry.IsCommon)
-                    {
-                    <span id="is_common_tag">&nbsp;&nbsp;&nbsp;common word&nbsp;&nbsp;&nbsp;</span>
-                    }
+                <div class="extra-tags">
                     @if (entry.JLPTLevel.Count > 0) 
                     {
-                    <span id="jlpt_tag">&nbsp;&nbsp;@String.Join(", ", entry.JLPTLevel)&nbsp;&nbsp;</span>
+                    <span class="jlpt-tag jlpt-1">@String.Join(", ", entry.JLPTLevel)</span>
+                    }
+                    @if (entry.IsCommon)
+                    {
+                    <span class="common-word">common</span>
                     }
                 </div>
             </div>
-            <div class="english_info">
-                @foreach (var englishEntry in entry.EnglishData)
-                {
-                <div class="word_meaning">
-                    <span class="meaning_tags">@String.Join(", ", englishEntry.PartsOfSpeech)</span>
-                    <span class="meaning_definition">@($"{_localEnglishCount}. ") @String.Join("; ", englishEntry.EnglishDefinitions)</span>
-                    <span class="meaning_extratags">@String.Join(", ", englishEntry.Tags)</span>
-                    <br />
-                    <br />
-                </div>
-                    _localEnglishCount++;
-                }
+            <div class="word-definitions">
+            @foreach (var englishEntry in entry.EnglishData)
+            {
+            <div class="definition">
+                <div><span>@(_localEnglishCount).</span><span>@String.Join(", ", englishEntry.PartsOfSpeech)</span></div>
+                <div><span>@String.Join("; ", englishEntry.EnglishDefinitions)</span><span class="extra-definition">@String.Join(", ", englishEntry.Tags)</span></div>
             </div>
-            <br />
-            <br />
+            _localEnglishCount++;
+            }
+            </div>
         </div>
+        
         _localEnglishCount = 1;
     }
-    <br />
 }
+
+</div>
+@* <footer id="footer-wrapper"></footer> *@
 
 @code {
     // Search term from the URL so links to searches can be saved. 
