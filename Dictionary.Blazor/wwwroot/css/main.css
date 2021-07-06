@@ -194,7 +194,7 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-grow: 0.1;
+  min-width: 170px;
 }
 
 .japanese-word {
@@ -206,14 +206,14 @@ table {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 42px;
+  font-size: 36px;
   line-height: 100%;
 }
 .japanese-word .hiragana {
   font-family: Open Sans;
   font-style: normal;
   font-weight: normal;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 100%;
 }
 
