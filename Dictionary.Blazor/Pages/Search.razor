@@ -17,7 +17,7 @@
             <div id="header-search">
                 <input type="text" placeholder="Love, happiness"  @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false" maxlength="100">
                 <img src="css/icons/cancel.svg">
-                <img src="css/icons/search.svg" @onclick="@SearchDictionaryManuallyAsync">
+                <img src="css/icons/search.svg" id="search-button" @onclick="@SearchDictionaryManuallyAsync">
             </div>
         </content>
 </header>
@@ -142,7 +142,7 @@ else
 
         if (e.Code == "Enter" || e.Code == "NumpadEnter")
         {
-            await _jsRunTime.InvokeVoidAsync("ClickButtonByElementID", "txt_button");
+            await _jsRunTime.InvokeVoidAsync("ClickButtonByElementID", "search-button");
         }
     }
 }
