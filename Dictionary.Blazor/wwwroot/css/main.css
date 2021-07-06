@@ -261,10 +261,14 @@ table {
   line-height: 26px;
 }
 .definition .extra-definition {
+  user-select: none;
   color: #C32D30;
-  opacity: 0.5;
-  font-size: 18px;
+  font-family: Open sans;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 300;
   line-height: 26px;
+  padding-left: 6px;
 }
 .definition div:nth-child(1) span:nth-child(1) {
   color: #000;
