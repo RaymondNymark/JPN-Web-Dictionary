@@ -353,5 +353,15 @@ table {
     padding-left: 32px;
   }
 }
+#about-text span {
+  color: #000;
+  font-family: Open Sans;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 30px;
+}
+#about-text span a {
+  color: #C32D30;
+}
 
 /*# sourceMappingURL=main.css.map */
