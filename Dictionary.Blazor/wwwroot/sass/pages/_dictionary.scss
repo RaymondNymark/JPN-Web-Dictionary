@@ -11,7 +11,7 @@
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
     color: #000;
     //padding: 2px 0px;
@@ -137,11 +137,11 @@
 }
 
 // JLPT-tag colors.
-.jlpt-1{background-color: #DD571C;}
-.jlpt-2{background-color: #e2730b;}
-.jlpt-3{background-color: #e28c0b;}
-.jlpt-4{background-color: #e29e0b;}
-.jlpt-5{background-color: #FFBF00;}
+.jlpt-n1{background-color: #DD571C;}
+.jlpt-n2{background-color: #e2730b;}
+.jlpt-n3{background-color: #e28c0b;}
+.jlpt-n4{background-color: #e29e0b;}
+.jlpt-n5{background-color: #FFBF00;}
 
 @media (max-width: 500px){
     .result{ flex-direction: column; padding: 8px 0px;}

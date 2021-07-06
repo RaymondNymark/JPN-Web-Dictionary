@@ -172,7 +172,7 @@ table {
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
   line-height: 30px;
   color: #000;
 }
@@ -287,23 +287,23 @@ table {
   padding-left: 64px;
 }
 
-.jlpt-1 {
+.jlpt-n1 {
   background-color: #DD571C;
 }
 
-.jlpt-2 {
+.jlpt-n2 {
   background-color: #e2730b;
 }
 
-.jlpt-3 {
+.jlpt-n3 {
   background-color: #e28c0b;
 }
 
-.jlpt-4 {
+.jlpt-n4 {
   background-color: #e29e0b;
 }
 
-.jlpt-5 {
+.jlpt-n5 {
   background-color: #FFBF00;
 }
 
