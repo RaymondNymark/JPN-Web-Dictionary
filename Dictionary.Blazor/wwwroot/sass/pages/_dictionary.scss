@@ -23,7 +23,7 @@
     align-items: flex-start;
     width: 100%;
     border-bottom: 1px solid #000;
-    padding: 8px 0px;
+    padding: 16px 0px;
 }
 
 // No border at bottom for last element.
@@ -45,7 +45,7 @@
         font-family: Open Sans;
         font-style: normal;
         font-weight: normal;
-        font-size: 36px;
+        font-size: 32px;
         line-height: 100%;
     }
     .hiragana{
@@ -144,12 +144,18 @@
 .jlpt-5{background-color: #FFBF00;}
 
 @media (max-width: 500px){
-    .result{ flex-direction: column; }
+    .result{ flex-direction: column; padding: 8px 0px;}
     .complete-word{ flex-direction: row; justify-content: space-between; width: 100%;}
     .extra-tags{ padding: 20px 0px 0px 0px; align-items: flex-end;}
     #dictionary-wrapper{ padding: 8px 12px; }
     .definition div:nth-child(2){ padding-left: 28px;}
     #result-display{ font-size: 18px;}
+
+    .japanese-word{
+        .kanji{
+            font-size: 36px;
+        }
+    }
 }
 
 // Extra wide screen optimization.
