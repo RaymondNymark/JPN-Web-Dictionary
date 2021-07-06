@@ -9,3 +9,7 @@ window.ChangeUrl = function (url) {
 window.ClickButtonByElementID = function (elementID) {
     document.getElementById(elementID).click();
 }
+
+function ClearInputField() {
+    $("#input-field").val("");
+}

@@ -15,8 +15,8 @@
                 <span>辞書 dictionary</span>
             </content>
             <div id="header-search">
-                <input type="text" placeholder="Love, happiness"  @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false" maxlength="100">
-                <img src="css/icons/cancel.svg">
+                <input type="text" id="input-field" placeholder="Love, happiness"  @bind-value="@_searchTerm" @onkeydown="@KeyPressAsync" autocomplete="off" spellcheck="false" maxlength="100">
+                <img src="css/icons/cancel.svg" onclick="ClearInputField()">
                 <img src="css/icons/search.svg" id="search-button" @onclick="@SearchDictionaryManuallyAsync">
             </div>
         </content>
@@ -25,12 +25,12 @@
 <div id="dictionary-wrapper">
 @if (dictionaryEntries == null)
 {
-    @* <div class="skinny_information_text">
+     <div class="skinny_information_text">
         <br />
         <p>A tidy Japanese-English dictionary, using the Jisho.api to find Japanese words, readings, expressions, and so much more.</p>
         <p>Enter any Japanese or English words, phrases, or text (like ‘love’ or ‘summer’) and the results will be presented.</p>
         <p id="smaller_paragraph">This ASP.NET Blazor application is created by me, <br /><a id="themedurl" href="https://github.com/RaymondNymark"><u>Raymond Nymark</u></a> 😊</p>
-    </div> *@
+    </div> 
 }
 else
 {
