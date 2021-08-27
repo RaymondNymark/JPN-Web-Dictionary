@@ -38,12 +38,7 @@ I've deployed the web-app on a small Linux server, and the website will reflect 
 
 
 ## Support for both Japanese and English search queries
-![](raw-assets/readme/n2.png)
-
-&nbsp;
----
-
-![](raw-assets/readme/n3.png)
+![](raw-assets/readme/n5.png)
 
 &nbsp;
 ---
