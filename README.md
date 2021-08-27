@@ -16,43 +16,33 @@ Also does minor things like saving the search query as a URL so you can save lin
 ## Want to check it out?
 The app is usable here: **http://139.162.187.61/Search**
 
-I've deployed the web-app on a small Linux server, and the website will reflect the most recent version of the dictionary! 🌐 Despite not having it's own domain name, it should work on every modern web-browser, and even on phones.  Feel free to check it out!🤗
+I've deployed the web-app on a small Linux server, and the website will reflect the most recent version of the dictionary! 🌐 Despite not having it's own domain name, it should work on every modern web-browser, and even on phones.  Feel free to check it out :)
 
 
 &nbsp;
 
 ## The dictionary in action!
-**What it's like to actually use the dictionary...**
-
-![](raw-assets/readme/Web-Dictionary.gif)
-
 &nbsp;
 
+**The main landing page**
+![](raw-assets/readme/n4.png)
 
 &nbsp;
-
-
-&nbsp;
-
 ---
 
-## Handful of screenshots:
-
-&nbsp;
-
-**The main landing page:**
-![](raw-assets/readme/screenshot1.png)
+**Responsive design!**
+![](raw-assets/readme/n1.png)
 
 &nbsp;
 ---
 
 ## Support for both Japanese and English search queries
-![](raw-assets/readme/screenshot2.png)
+![](raw-assets/readme/n2.png)
 
 &nbsp;
 ---
 
-![](raw-assets/readme/Screenshot3.png)
+![](raw-assets/readme/n3.png)
 
 &nbsp;
 ---
