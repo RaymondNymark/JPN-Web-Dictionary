@@ -30,14 +30,8 @@ I've deployed the web-app on a small Linux server, and the website will reflect 
 &nbsp;
 ---
 
-**The main landing page**
-![](raw-assets/readme/n4.png)
 
-&nbsp;
----
-
-
-## Support for both Japanese and English search queries
+** Support for both Japanese and English search queries!**
 ![](raw-assets/readme/n5.png)
 
 &nbsp;
