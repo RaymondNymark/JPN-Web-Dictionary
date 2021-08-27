@@ -24,17 +24,18 @@ I've deployed the web-app on a small Linux server, and the website will reflect 
 ## The dictionary in action!
 &nbsp;
 
+**Mobile friendly!**
+![](raw-assets/readme/n1.png)
+
+&nbsp;
+---
+
 **The main landing page**
 ![](raw-assets/readme/n4.png)
 
 &nbsp;
 ---
 
-**Responsive design!**
-![](raw-assets/readme/n1.png)
-
-&nbsp;
----
 
 ## Support for both Japanese and English search queries
 ![](raw-assets/readme/n2.png)
