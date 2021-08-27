@@ -16,7 +16,7 @@ Also does minor things like saving the search query as a URL so you can save lin
 ## Want to check it out?
 The app is usable here: **http://139.162.187.61/Search**
 
-I've deployed the web-app on a small Linux server, and the website will reflect the most recent version of the dictionary! 🌐 Despite not having it's own domain name, it should work on every modern web-browser, and even on phones.  Feel free to check it out :)
+I've deployed the web-app on a Linux server, and the website will reflect the most recent version of the dictionary! 🌐 Despite not having it's own domain name, it should work on every modern web-browser, and even on phones.  Feel free to check it out :)
 
 
 &nbsp;
@@ -39,4 +39,4 @@ I've deployed the web-app on a small Linux server, and the website will reflect 
 
 &nbsp;
 
-Thank you for checking this out! I'm an avid fan of Japanese and a dictionary seemed like a fun project to make. Have a nice day 😊👍
+Thank you for checking this out! I'm an avid fan of Japanese. Have a nice day 😊👍
