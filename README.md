@@ -14,7 +14,7 @@ An online dictionary for English-Japanese, using the the public jisho API for th
 Also does minor things like saving the search query as a URL so you can save links to specific results. 😊
 
 ## Want to check it out?
-The app is usable here: **https://www.kisekinihongo.net/Search**
+The app is usable here: **https://KisekiNihongo.net/Search**
 
 I've deployed the web-app on a Linux server, and the website will reflect the most recent version of the dictionary! 🌐 It should work on every modern web-browser, and even on phones.  Feel free to check it out :)
 
