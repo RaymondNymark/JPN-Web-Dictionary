@@ -24,23 +24,29 @@ namespace Dictionary.Core.Services
         {
             string SearchTerm = searchTerm;
             string Url = $"https://jisho.org/api/v1/search/words?keyword={SearchTerm}";
-
-            using (HttpResponseMessage response = await ApiManager.ApiClient.GetAsync(Url))
+            try
             {
-                if (response.IsSuccessStatusCode)
+                using (HttpResponseMessage response = await ApiManager.ApiClient.GetAsync(Url))
                 {
-                    // Fetches all of the data from the API call and plots it
-                    // into the DictionaryEntry model, shaving off properties
-                    // that will not be used in the process. 
-                    var DeserializedEntries = await response.Content.ReadAsAsync<RetrievedDictionaryModel.DictionaryResult>();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        // Fetches all of the data from the API call and plots it
+                        // into the DictionaryEntry model, shaving off properties
+                        // that will not be used in the process. 
+                        var DeserializedEntries = await response.Content.ReadAsAsync<RetrievedDictionaryModel.DictionaryResult>();
 
-                    return DeserializedEntries.Entries;
+                        return DeserializedEntries.Entries;
+                    }
+                    else
+                    {
+                        // Throws exception if response is not successful.
+                        throw new Exception(response.ReasonPhrase);
+                    }
                 }
-                else
-                {
-                    // Throws exception if response is not successful.
-                    throw new Exception(response.ReasonPhrase);
-                }
+            }
+            catch (Exception)
+            {
+                return null;
             }
 
         }
